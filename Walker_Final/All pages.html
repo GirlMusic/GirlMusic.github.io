@@ -1,0 +1,146 @@
+<html>
+<title>Movie Information</title>
+<style>
+.jc{
+position:relative;
+}
+</style>
+
+<script language="JavaScript1.2">
+
+var ns6=document.getElementById&&!document.all
+var ie=document.all
+
+var customcollect=new Array()
+var i=0
+
+function jiggleit(num){
+if ((!document.all&&!document.getElementById)) return;
+customcollect[num].style.left=(parseInt(customcollect[num].style.left)==-1)? customcollect[num].style.left=1 : customcollect[num].style.left=-1
+}
+
+function init(){
+if (ie){
+while (eval("document.all.jiggle"+i)!=null){
+customcollect[i]= eval("document.all.jiggle"+i)
+i++
+} 
+}
+else if (ns6){
+while (document.getElementById("jiggle"+i)!=null){
+customcollect[i]= document.getElementById("jiggle"+i)
+i++
+}
+}
+
+if (customcollect.length==1)
+setInterval("jiggleit(0)",80)
+else if (customcollect.length>1)
+for (y=0;y<customcollect.length;y++){
+var tempvariable='setInterval("jiggleit('+y+')",'+'100)'
+eval(tempvariable)
+}
+}
+
+window.onload=init
+
+</script>
+
+ <link rel="icon" type="image/x-icon" href="Photo shop icon.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Info</b> Movie Savers</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">C.G. Scenes</a>
+      <a href="#about" class="w3-bar-item w3-button">About The Delorian</a>
+      <a href="#contact" class="w3-bar-item w3-button">Fun Facts</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w1-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="400">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>IW</b></span> <span class="w3-hide-small w3-text-light-grey">Entertianment</span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Graphic Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Computer Graphic Scenes</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Behind the scenes</div>
+        <img src="flybasteredfly!!!!!!!!!!!!!!2.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Flying cop car</div>
+        <img src="copswoahges.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Bye, Micfly</div>
+        <img src="byecar2.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Lightning</div>
+        <img src="clash2.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> <span id="jiggle0" class="jc"><b>What the DeLorian was really like</h3></b></span>
+    <p> There were seven Delorians used from back form the future and only four remained after the movies were made. In the second Back To The Future film, th actor of Doc says that the Biff Tannens '46 Ford would tear through the DeLorean like tin foil. The reason why the is car was picked was for it's style. Hence the line "do it with style."
+    </p>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Facts Behind BFTF </h3>
+    <p>Did you know this?</p>
+    <form action="/action_page.php" target="_blank">
+      <input class="w3-input w3-border" type="text" placeholder="The Back to the Future script was rejected more than 40 times" required name="The Back to the Future script was rejected more than 40 times">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Disney's studio executives thought Back to the Future was too raunchy" required name="Disney's studio executives thought Back to the Future was too raunchy">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="The time machine was regionally a time chamber then a 1950s-style refrigerator" required name="The time machine was regionally a time chamber then a 1950s-style refrigerator">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="There was some friction on-set between Crispin Glover and Zemeckis" required name="Comment">
+     
+    </form>
+  </div>
+  
+<!-- Image of location/map -->
+<div class="w3-container">
+  <img src="HUHUHd2.jpg" class="w3-image" width="100%">
+</div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Template from <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>
